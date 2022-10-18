@@ -690,8 +690,6 @@ class FuncSelector(param.Parameterized):
 # FunctionStack
 
 from unicodedata import name
-
-
 class FunctionStack(param.Parameterized):
 
     def __init__(self, datapath='./data/',functions_module=None):
