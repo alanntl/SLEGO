@@ -1,0 +1,1 @@
+{"layer_0": {"pack_0": {"stack_0": {"get_marketdata_yahoo_csv": {"ticker": "msft", "start_date": "2021-09-14", "end_date": "2022-09-14", "output_csv_name": "./data/output111.csv"}}}}}
