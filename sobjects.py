@@ -18,7 +18,7 @@ import webbrowser
 import dtale
 import uuid
 import typing
-from tkinter import Tk, filedialog
+#from tkinter import Tk, filedialog
 import ipywidgets as widgets
 import json
 import contextlib
@@ -26,7 +26,7 @@ import io
 import threading
 from unicodedata import name
 
-from turtle import title
+#from turtle import title
 
 # datafileblock
 class DataFileBlock(param.Parameterized):
@@ -49,7 +49,7 @@ class DataFileBlock(param.Parameterized):
         self.btn_duplicate.on_click(self.btn_duplicate_click)
         self.btn_delete.on_click(self.btn_delete_click)
         self.file_import.param.watch(self.file_import_clicked, 'value')
-        self.file_input.on_click(self.file_upload_clicked)
+        #self.file_input.on_click(self.file_upload_clicked)
         self.folderpath_input.param.watch(self.folder_path_change, 'value')
 
     def get_files(self,folder_path='./data/'):
@@ -95,13 +95,13 @@ class DataFileBlock(param.Parameterized):
         #time.sleep(1)
         #self.filesselector.options = self.get_files()
 
-    def file_upload_clicked(self,*b):
-        root = Tk()
-        root.withdraw()                                        
-        root.call('wm', 'attributes', '.', '-topmost', True)   
-        self.uploaded_files = filedialog.askopenfilename(multiple=True)  
-        self.messagebox.value = 'Uploaded file: ' +str(self.uploaded_files)
-        return self.uploaded_files                 
+    # def file_upload_clicked(self,*b):
+    #     root = Tk()
+    #     root.withdraw()                                        
+    #     root.call('wm', 'attributes', '.', '-topmost', True)   
+    #     self.uploaded_files = filedialog.askopenfilename(multiple=True)  
+    #     self.messagebox.value = 'Uploaded file: ' +str(self.uploaded_files)
+    #     return self.uploaded_files                 
 
     def file_import_clicked(self,event):
         self.messagebox.value = 'Imported files: \n'
@@ -153,7 +153,7 @@ class ProgramFileBlock(param.Parameterized):
         self.btn_duplicate.on_click(self.btn_duplicate_click)
         self.btn_delete.on_click(self.btn_delete_click)
         self.file_import.param.watch(self.file_import_clicked, 'value')
-        self.file_input.on_click(self.file_upload_clicked)
+        #self.file_input.on_click(self.file_upload_clicked)
         self.folderpath_input.param.watch(self.folder_path_change, 'value')
 
     def get_files(self,folder_path='./user_function/'):
@@ -197,13 +197,13 @@ class ProgramFileBlock(param.Parameterized):
             file.unlink()
         self.filesselector.options = self.get_files()
 
-    def file_upload_clicked(self,*b):
-        root = Tk()
-        root.withdraw()                                        
-        root.call('wm', 'attributes', '.', '-topmost', True)   
-        self.uploaded_files = filedialog.askopenfilename(multiple=True)  
-        self.messagebox.value = 'Uploaded file: ' +str(self.uploaded_files)
-        return self.uploaded_files                 
+    # def file_upload_clicked(self,*b):
+    #     root = Tk()
+    #     root.withdraw()                                        
+    #     root.call('wm', 'attributes', '.', '-topmost', True)   
+    #     self.uploaded_files = filedialog.askopenfilename(multiple=True)  
+    #     self.messagebox.value = 'Uploaded file: ' +str(self.uploaded_files)
+    #     return self.uploaded_files                 
 
     def file_import_clicked(self,event):
         self.messagebox.value = 'Imported files: \n'
@@ -253,7 +253,7 @@ class FunctionFileBlock(param.Parameterized):
         self.btn_duplicate.on_click(self.btn_duplicate_click)
         self.btn_delete.on_click(self.btn_delete_click)
         self.file_import.param.watch(self.file_import_clicked, 'value')
-        self.file_input.on_click(self.file_upload_clicked)
+        #self.file_input.on_click(self.file_upload_clicked)
         self.folderpath_input.param.watch(self.folder_path_change, 'value')
 
     def get_files(self,folder_path='./functions/'):
@@ -297,13 +297,13 @@ class FunctionFileBlock(param.Parameterized):
             file.unlink()
         self.filesselector.options = self.get_files()
 
-    def file_upload_clicked(self,*b):
-        root = Tk()
-        root.withdraw()                                        
-        root.call('wm', 'attributes', '.', '-topmost', True)   
-        self.uploaded_files = filedialog.askopenfilename(multiple=True)  
-        self.messagebox.value = 'Uploaded file: ' +str(self.uploaded_files)
-        return self.uploaded_files                 
+    # def file_upload_clicked(self,*b):
+    #     root = Tk()
+    #     root.withdraw()                                        
+    #     root.call('wm', 'attributes', '.', '-topmost', True)   
+    #     self.uploaded_files = filedialog.askopenfilename(multiple=True)  
+    #     self.messagebox.value = 'Uploaded file: ' +str(self.uploaded_files)
+    #     return self.uploaded_files                 
 
     def file_import_clicked(self,event):
         self.messagebox.value = 'Imported files: \n'
@@ -1063,7 +1063,7 @@ class App(param.Parameterized):
         ('Program files preview',self.programpreview.view),('Function editor',self.functioneditorblock.view ))
 
         self.accordion = pn.Accordion(('Layer0', self.tabs),toggle =False, active=[0]  )
-        self.template = pn.template.MaterialTemplate(title='AnalyticsCube - Additive Program/User config software')
+        self.template = pn.template.MaterialTemplate(title='SLEGO - Additive Program/User config software')
 
         self.template.sidebar.append(self.tabs_sidebar)
         self.template.sidebar.append(pn.layout.Divider())
